@@ -1,0 +1,243 @@
+/* CSS to style the container */
+.container-home {
+    position: relative;
+    /* Set container position to relative */
+    width: 100%;
+    /* Full width */
+    height: 700px;
+    /* Set a fixed height for the container */
+    overflow: hidden;
+    /* Hide overflow to ensure child elements don't extend beyond the container */
+}
+
+/* CSS to style the background image */
+.image {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    background-image: url('../img/main.jpg');
+    /* Set the background image */
+    background-size: cover;
+    /* Cover the entire container */
+    background-position: center;
+    /* Center the background image */
+}
+
+/* CSS to style the logo */
+.logo {
+    position: absolute;
+    /* Position the logo absolutely within the container */
+    top: 35%;
+    /* Align the top edge of the logo to the vertical center of the container */
+    left: 50%;
+    /* Align the left edge of the logo to the horizontal center of the container */
+    transform: translate(-50%, -50%);
+    /* Move the logo up and left by half of its width and height */
+}
+
+.leaves-wrapper {
+    position: absolute;
+    top: 275px;
+    left: 310px;
+    z-index: 1;
+    transform-origin: bottom; /* Set transform origin to bottom */
+    animation: scaleUp 2s ease-in-out; 
+}
+
+@keyframes scaleUp {
+    0% {
+      transform: scaleY(0); /* Start from scaleY 0 */
+    }
+    100% {
+      transform: scaleY(1); /* Scale to original size */
+    }
+}
+
+.company-name {
+    position: absolute;
+    /* Position the logo absolutely within the container */
+    top: 75%;
+    /* Align the top edge of the logo to the vertical center of the container */
+    left: 50%;
+    /* Align the left edge of the logo to the horizontal center of the container */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+}
+
+.about-us-header {
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.about-us-description {
+    color: black;
+    font-size: 25px;
+    text-align: center;
+}
+
+.services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.services>ul>ol {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.our-mission {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--tertiary);
+}
+
+.our-mission-title {
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.our-mission-subtitle {
+    color: black;
+    font-size: 25px;
+    text-align: center;
+}
+
+.our-mission-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.our-mission-paragraph {
+    width: 350px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+.eco-svg {
+    margin-bottom: 20px;
+}
+
+.services-page {
+    background-color: var(--quarterly);
+}
+
+/* carousel images */
+/* Mixin converted to standard CSS */
+.white-gradient {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Variable converted to direct value */
+/* Mixin converted to standard CSS */
+.white-gradient {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Variable converted to direct value */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 14));
+    }
+}
+
+.slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    height: 200px;
+    /* Increased height for larger images */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* Make slider width 100% */
+    max-width: 960px;
+    /* Limit the max-width */
+    margin-bottom: 35px;
+}
+
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(350px * 14);
+    /* Adjusted to larger image width */
+}
+
+.slider .slide {
+    height: 100%;
+    width: 350px;
+    /* Adjusted to larger image width */
+}
+
+.slider .slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container without distortion */
+}
+
+
+/* END carousel images */
+
+/* svg logo */
+.path {
+    stroke-dasharray: 47097.8203125; /* Large number to cover the length of the path */
+    stroke-dashoffset: 47097.8203125;
+    animation: draw 5s linear forwards; /* 5s is the duration of the animation */
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+/* END svg logo */

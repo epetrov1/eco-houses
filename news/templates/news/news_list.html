@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block headers %}
+<title>{% trans "News" %}</title>
+{% endblock headers %}
+{% block body %}
+    <div class="container">
+        <div class="headers">
+            <h1 class="header" align="center">{% trans "News" %}</h1>
+            {% include "logo.html" %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card-columns">
+                    {% for obj in object_list %}
+                        <a href="{{ obj.slug }}">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ obj.thumbnail.url | safe }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ obj.title | safe }}</h5>
+                                </div>
+                            </div>
+                        </a>
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

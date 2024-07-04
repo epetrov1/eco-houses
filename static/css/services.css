@@ -1,0 +1,36 @@
+
+.header-services {
+    text-align: center;
+}
+
+.img-gallery {
+    width: 350px;
+    height: auto;
+    margin: 5px;
+}
+
+.close {
+    font-size: 1.5rem;
+}
+
+col-12 img {
+    opacity: 0.7;
+    cursor: pointer;
+    margin: 2rem;
+    width: 100%;
+}
+
+.col-12 img:hover {
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 1rem);
+}
+
+.services-page .card-columns .card.custom-background {
+    background-color: var(--red)!important;
+}

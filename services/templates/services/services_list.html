@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block headers %}
+<title>{% trans "Services" %}</title>
+{% endblock headers %}
+
+{% block body %}
+    <div class="services-page">
+        <div class="container">
+            <div class="headers">
+                <h1 class="header" align="center">{% trans "Services" %}</h1>
+                {% include "logo.html" %}
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card-columns">
+                        {% for obj in object_list %}
+                            <a href="{{ obj.slug }}">
+                                <div class="card border-light mb-3 custom-background">
+                                    <img class="card-img-top" src="{{ obj.thumbnail.url | safe }}" alt="Card image cap"/>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ obj.title | safe }}</h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body%}

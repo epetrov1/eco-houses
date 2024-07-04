@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block headers %}
+<title>{{ object.title | safe }}</title>
+<link rel="stylesheet" href="{% static 'css/services.css' %}" type="text/css" />
+{% endblock headers %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-md-12">
+            <h1 class="header-services">{{ object.title | safe }}</h1>
+            <p style="color: white" id="summernote">{{ object.content | safe }}</p>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock body %}
